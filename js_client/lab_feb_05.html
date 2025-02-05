@@ -26,7 +26,7 @@
             let value;
             do {
                 value = prompt("Enter the numeric value to convert:");
-            } while (isNaN(value) || value.trim() === "");
+            } while (isNaN(value));
 
             value = parseFloat(value);
             let result;
