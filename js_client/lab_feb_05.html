@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab work</title>
+</head>
+<body>
+    <script>
+        function convertKgToLb(kg) {
+            return kg / 0.45359237;
+        }
+
+        function convertLbToKg(lb) {
+            return lb * 0.45359237;
+        }
+
+        let userInp;
+        do {
+            userInp = prompt("Please enter the number");
+        } while (userInp !== "1" && userInp !== "2" && userInp !== "3");
+
+        if (userInp === "3") {
+            document.write("<p>Exiting the program...</p>");
+        } else {
+            let value;
+            do {
+                value = prompt("Enter the numeric value to convert:");
+            } while (isNaN(value) || value.trim() === "");
+
+            value = parseFloat(value);
+            let result;
+
+            switch (userInp) {
+                case "1":
+                    result = convertKgToLb(value);
+                    document.write(`<p>${value} kg is equal to ${result.toFixed(2)} lb.</p>`);
+                    break;
+                case "2":
+                    result = convertLbToKg(value);
+                    document.write(`<p>${value} lb is equal to ${result.toFixed(2)} kg.</p>`);
+                    break;
+            }
+        }
+    </script>
+</body>
+</html>
